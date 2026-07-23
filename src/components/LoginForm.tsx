@@ -77,8 +77,8 @@ export function LoginForm() {
         if (resetError) throw resetError;
         setSuccess(t.login.resetLinkSent);
       }
-    } catch {
-      setError(t.login.error);
+    } catch (err: any) {
+      setError(err?.message || t.login.error);
     } finally {
       setLoading(false);
     }
