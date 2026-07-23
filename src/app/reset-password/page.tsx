@@ -49,8 +49,9 @@ export default function ResetPasswordPage() {
       setTimeout(() => {
         router.push("/");
       }, 2000);
-    } catch (err: any) {
-      setError(err?.message || t.login.error);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : t.login.error;
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
