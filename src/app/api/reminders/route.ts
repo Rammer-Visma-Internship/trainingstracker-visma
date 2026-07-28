@@ -50,7 +50,7 @@ export async function POST() {
 
     if (yearlyHours > 0) continue;
 
-    const message = `Hi ${employee.full_name}, friendly reminder: you haven't logged any training hours yet. Please update your training log when you have a moment.`;
+    const message = `Hi ${employee.full_name}, friendly reminder: you haven't logged any training hours yet. Please update your training log when you have a moment here.  https://track-vismatechpt.vercel.app/ `;
 
     try {
       await sendPrivateSlackDM(employee.email, message);
